@@ -1,0 +1,99 @@
+﻿@model IEnumerable<GraciousGrocery.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" id="productTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductUrl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manufacturer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.ProductUrl)
+                </td>
+                <td>
+                    <img src="@item.ProductUrl" style="max-width:200px; max-height:200px" />
+                    <!--@Html.DisplayFor(modelItem => item.ProductUrl)-->
+                </td>
+                <td>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ProductId })
+                    }
+                    @Html.ActionLink("Details", "Details", new { id = item.ProductId })
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <!--@Html.ActionLink("Delete", "Delete", new { id = item.ProductId })-->
+                        <button data-id="@item.ProductId" class="btn-link js-delete">Delete</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts {
+    <script>
+        var table = $("#productTable").DataTable();
+        $("#productTable .js-delete").on("click", function () {
+            var button = $(this);
+            bootbox.confirm("Do you want to delete this product?",
+                function (result) {
+                    $.ajax({
+                        url: "/Products/Delete" + button.attr("data-id"),
+                        method: "GET",
+                        success: function () {
+                            table.row(button.parents("tr")).remove().draw();
+                        }
+                    });
+                })
+        });
+    </script>
+}
