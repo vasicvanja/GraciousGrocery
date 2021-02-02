@@ -57,6 +57,7 @@ namespace GraciousGrocery.Controllers
             var model = new AddToRoleModel();
             model.roles.Add("Admin");
             model.roles.Add("Seller");
+            model.roles.Add("User");
             return View(model);
         }
         [HttpPost]

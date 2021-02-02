@@ -35,5 +35,9 @@ namespace GraciousGrocery.Models
         public System.Data.Entity.DbSet<GraciousGrocery.Models.Category> Categories { get; set; }
 
         public System.Data.Entity.DbSet<GraciousGrocery.Models.Store> Stores { get; set; }
+
+        public System.Data.Entity.DbSet<GraciousGrocery.Models.ShoppingCartModel> ShoppingCartModels { get; set; }
+
+        public System.Data.Entity.DbSet<GraciousGrocery.Models.SubmitedProducts> SubmitedProducts { get; set; }
     }
 }
