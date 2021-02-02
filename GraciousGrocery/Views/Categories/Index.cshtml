@@ -3,67 +3,67 @@
 @{
     ViewBag.Title = "Index";
 }
+<body style="background-color: lightgoldenrodyellow!important">
+    <h2 style="margin-top: 120px !important;color: #ff80aa!important">List of categories</h2>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table" id="categoryTable">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryUrl)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <p>
+        @Html.ActionLink("Create New", "Create", new { @style = "margin-top:120px!important" })
+    </p>
+    <table class="table" id="categoryTable" style="margin-top:50px!important">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryName)
-                </td>
-                <td>
-                    <img src="@item.CategoryUrl" style="max-height:200px; max-width:200px" />
-                    <!--@Html.DisplayFor(modelItem => item.CategoryUrl)-->
-                </td>
-                <td>
-                    @if (User.IsInRole("Administrator"))
-                    {
-                        @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId })
-                    }
-                    @Html.ActionLink("Details", "Details", new { id = item.CategoryId })
-                    @if (User.IsInRole("Administrator"))
-                    {
-                        <!--@Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })-->
-                        <button data-id="@item.CategoryId" class="btn-link js-delete">Delete</button>
-                    }
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryUrl)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
-
-@section scripts {
-    <script>
-        var table = $("#categoryTable").DataTable();
-        $("#categoryTable .js-delete").on("click", function () {
-            var button = $(this);
-            bootbox.confirm("Do you want to delete this category?",
-                function (result) {
-                    $.ajax({
-                        url: "/Categories/Delete" + button.attr("data-id"),
-                        method: "GET",
-                        success: function () {
-                            table.row(button.parents("tr")).remove().draw();
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </td>
+                    <td>
+                        <img src="@item.CategoryUrl" style="max-height:200px; max-width:200px" />
+                        <!--@Html.DisplayFor(modelItem => item.CategoryUrl)-->
+                    </td>
+                    <td>
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId })
                         }
-                    });
-                })
-        });
-    </script>
-}
+                        @Html.ActionLink("Details", "Details", new { id = item.CategoryId })
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            <!--@Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })-->
+                            <button data-id="@item.CategoryId" class="btn-link js-delete">Delete</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+    @section scripts {
+        <script>
+            var table = $("#categoryTable").DataTable();
+            $("#categoryTable .js-delete").on("click", function () {
+                var button = $(this);
+                bootbox.confirm("Do you want to delete this category?",
+                    function (result) {
+                        $.ajax({
+                            url: "/Categories/Delete" + button.attr("data-id"),
+                            method: "GET",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    })
+            });
+        </script>
+    }
