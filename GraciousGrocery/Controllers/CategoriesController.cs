@@ -35,6 +35,26 @@ namespace GraciousGrocery.Controllers
             return View(category);
         }
 
+        public ActionResult AddToCategory(int id)
+        {
+            AddToCategoryModel model = new AddToCategoryModel();
+            model.categoryId = id;
+            model.products = db.Products.ToList();
+            ViewBag.CategoryName = db.Categories.Find(id).CategoryName;
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AddToCategory(AddToCategoryModel model)
+        {
+            var category = db.Categories.Find(model.categoryId);
+            var product = db.Products.Find(model.productId);
+            category.products.Add(product);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
         // GET: Categories/Create
         public ActionResult Create()
         {
