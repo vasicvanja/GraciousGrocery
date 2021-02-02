@@ -20,7 +20,7 @@ namespace GraciousGrocery.Controllers
         {
             return View(db.ShoppingCartModels.ToList());
         }
-
+         
         public ActionResult Order()
         {
             ApplicationUser user = db.Users.Find(User.Identity.GetUserId());

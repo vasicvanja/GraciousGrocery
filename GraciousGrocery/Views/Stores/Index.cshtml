@@ -39,7 +39,7 @@
                         @Html.ActionLink("Details", "Details", new { id = item.StoreId })
                         @if (User.IsInRole("Administrator"))
                         {
-                            <!--@Html.ActionLink("Delete", "Delete", new { id = item.StoreId })-->
+                            @*<!--@Html.ActionLink("Delete", "Delete", new { id = item.StoreId })-->*@
                             <button data-id="@item.StoreId" class="btn-link js-delete">Delete</button>
                         }
                         @if (User.IsInRole("Administrator"))

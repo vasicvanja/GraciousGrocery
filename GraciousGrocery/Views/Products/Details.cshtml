@@ -3,64 +3,65 @@
 @{
     ViewBag.Title = "Details";
 }
+<body style="background-color: lightgoldenrodyellow!important">
+    <h2 style="margin-top: 120px !important;color: #ff80aa!important">Details</h2>
 
-<h2>Details</h2>
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </dt>
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProductName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductPrice)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProductPrice)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductPrice)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Manufacturer)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Manufacturer)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Manufacturer)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Manufacturer)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Weight)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Weight)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Weight)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Weight)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductUrl)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductUrl)
-        </dt>
+            <dd>
+                <img src="@Model.ProductUrl" style="max-width:200px; max-height:200px"/>
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductUrl)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </body>
