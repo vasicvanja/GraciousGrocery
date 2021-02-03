@@ -6,24 +6,22 @@ using System.Web;
 
 namespace GraciousGrocery.Models
 {
-    public class ShoppingCartModel
+    public class CartItem
     {
         [Key]
         public string UserId { get; set; }
         public List<int> Quantity { get; set; }
-        public virtual List<Product> products { get; set; }
-
-        public ShoppingCartModel(string userID)
+        public virtual List<Product> Products { get; set; }
+        public CartItem(string userID)
         {
+            Products = new List<Product>();
             Quantity = new List<int>();
-            products = new List<Product>();
             UserId = userID;
         }
-
-        public ShoppingCartModel()
+        public CartItem()
         {
+            Products = new List<Product>();
             Quantity = new List<int>();
-            products = new List<Product>();
         }
     }
 }

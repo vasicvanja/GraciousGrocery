@@ -1,0 +1,15 @@
+﻿@model GraciousGrocery.Models.AddToProductModel
+@{
+    ViewBag.Title = "AddToProduct";
+}
+
+<h2>Add product to @ViewBag.ProductName</h2>
+
+@using (Html.BeginForm("AddToProduct", "Products"))
+{
+    <div class="form-group">
+        @Html.DropDownListFor(m => m.categoryId, new SelectList(Model.categories, "categoryId", "CategoryName"), new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.categoryId)
+    <button type="submit" class="btn btn-default">Add</button>
+}

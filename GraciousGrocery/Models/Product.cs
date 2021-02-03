@@ -20,12 +20,11 @@ namespace GraciousGrocery.Models
         [Required]
         public string Manufacturer { get; set; }
         [Required]
-        public float Weight { get; set; }
-        [Required]
         public int Quantity { get; set; }
         [Required]
         [Display(Name = "Image")]
         public string ProductUrl { get; set; }
+        [Display(Name = "Category")]
         public virtual Category category { get; set; }
     }
 }

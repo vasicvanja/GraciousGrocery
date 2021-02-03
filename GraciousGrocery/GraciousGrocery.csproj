@@ -169,11 +169,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartItemsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\ShoppingCartModelsController.cs" />
     <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Controllers\SubmitedProductsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -207,18 +207,44 @@
     <Compile Include="Migrations\202102021503104_shoppingCart_submitedProducts.designer.cs">
       <DependentUpon>202102021503104_shoppingCart_submitedProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102030005232_fix.cs" />
+    <Compile Include="Migrations\202102030005232_fix.designer.cs">
+      <DependentUpon>202102030005232_fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102030111474_changes.cs" />
+    <Compile Include="Migrations\202102030111474_changes.designer.cs">
+      <DependentUpon>202102030111474_changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102030135287_change.cs" />
+    <Compile Include="Migrations\202102030135287_change.designer.cs">
+      <DependentUpon>202102030135287_change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102030137406_removedWeight.cs" />
+    <Compile Include="Migrations\202102030137406_removedWeight.designer.cs">
+      <DependentUpon>202102030137406_removedWeight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102030412477_newShoppingCart.cs" />
+    <Compile Include="Migrations\202102030412477_newShoppingCart.designer.cs">
+      <DependentUpon>202102030412477_newShoppingCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102030503323_buttons.cs" />
+    <Compile Include="Migrations\202102030503323_buttons.designer.cs">
+      <DependentUpon>202102030503323_buttons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddToCategoryModel.cs" />
+    <Compile Include="Models\AddToProductModel.cs" />
     <Compile Include="Models\AddToRoleModel.cs" />
     <Compile Include="Models\AddToStoreModel.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ShoppingCartModel.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\SubmitedProducts.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -537,16 +563,17 @@
     <Content Include="Views\Stores\AddToStore.cshtml" />
     <Content Include="Views\Account\AddUserToRole.cshtml" />
     <Content Include="Views\Categories\AddToCategory.cshtml" />
-    <Content Include="Views\ShoppingCartModels\Create.cshtml" />
-    <Content Include="Views\ShoppingCartModels\Delete.cshtml" />
-    <Content Include="Views\ShoppingCartModels\Details.cshtml" />
-    <Content Include="Views\ShoppingCartModels\Edit.cshtml" />
-    <Content Include="Views\ShoppingCartModels\Index.cshtml" />
     <Content Include="Views\SubmitedProducts\Create.cshtml" />
     <Content Include="Views\SubmitedProducts\Delete.cshtml" />
     <Content Include="Views\SubmitedProducts\Details.cshtml" />
     <Content Include="Views\SubmitedProducts\Edit.cshtml" />
     <Content Include="Views\SubmitedProducts\Index.cshtml" />
+    <Content Include="Views\CartItems\Create.cshtml" />
+    <Content Include="Views\CartItems\Delete.cshtml" />
+    <Content Include="Views\CartItems\Details.cshtml" />
+    <Content Include="Views\CartItems\Edit.cshtml" />
+    <Content Include="Views\CartItems\Index.cshtml" />
+    <Content Include="Views\Products\AddToProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -586,6 +613,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102021503104_shoppingCart_submitedProducts.resx">
       <DependentUpon>202102021503104_shoppingCart_submitedProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102030005232_fix.resx">
+      <DependentUpon>202102030005232_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102030111474_changes.resx">
+      <DependentUpon>202102030111474_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102030135287_change.resx">
+      <DependentUpon>202102030135287_change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102030137406_removedWeight.resx">
+      <DependentUpon>202102030137406_removedWeight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102030412477_newShoppingCart.resx">
+      <DependentUpon>202102030412477_newShoppingCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102030503323_buttons.resx">
+      <DependentUpon>202102030503323_buttons.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

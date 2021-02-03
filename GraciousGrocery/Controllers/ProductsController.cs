@@ -35,6 +35,27 @@ namespace GraciousGrocery.Controllers
             return View(product);
         }
 
+        /*
+        public ActionResult AddToProduct(int id)
+        {
+            AddToProductModel model = new AddToProductModel();
+            model.productId = id;
+            model.categories = db.Categories.ToList();
+            ViewBag.ProductName = db.Products.Find(id).ProductName;
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AddToProduct(AddToProductModel model)
+        {
+            var category = db.Categories.Find(model.categoryId);
+            var product = db.Products.Find(model.productId);
+            product.categories.Add(category);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        */
+
         [Authorize(Roles = "Administrator")]
         // GET: Products/Create
         public ActionResult Create()
@@ -118,7 +139,6 @@ namespace GraciousGrocery.Controllers
             return RedirectToAction("Index");
         }
         */
-        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int id)
         {
             Product product = db.Products.Find(id);

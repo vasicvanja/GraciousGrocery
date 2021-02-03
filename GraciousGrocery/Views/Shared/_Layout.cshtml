@@ -68,6 +68,11 @@
                     <li style="margin-left:10px!important">@Html.ActionLink("Products", "Index", "Products")</li>
                     <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
                     <li>@Html.ActionLink("Stores", "Index", "Stores")</li>
+                    <li>@Html.ActionLink("Cart", "Details", "CartItems")</li>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <li>@Html.ActionLink("Asign Role", "AddUserToRole", "Account")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
 

@@ -16,6 +16,12 @@ namespace GraciousGrocery.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: SubmitedProducts
+        /*
+        public ActionResult Index()
+        {
+            return View(db.SubmitedProducts.ToList());
+        }
+        */
         public ActionResult Index()
         {
             if (db.SubmitedProducts.Find(User.Identity.GetUserId()) == null)

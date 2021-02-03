@@ -35,14 +35,6 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.Weight)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Weight)
-            </dd>
-
-            <dt>
                 @Html.DisplayNameFor(model => model.Quantity)
             </dt>
 
@@ -55,13 +47,34 @@
             </dt>
 
             <dd>
-                <img src="@Model.ProductUrl" style="max-width:200px; max-height:200px"/>
+                <img src="@Model.ProductUrl" style="max-width:200px; max-height:200px" />
             </dd>
 
         </dl>
     </div>
+    <a href="#" class="btn btn-dark js-quantity text-white">Add to Cart</a>
     <p>
+        <!--@Html.ActionLink("Add to cart", "AddItemToCart", "CartItem", new { id = Model.ProductId, quantity = Model.Quantity }, htmlAttributes: new { @class = "btn btn-dark" })-->
         @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
-    </body>
+</body>
+
+@section Scripts{
+    <script>
+        $(".js-quantity").click(function () {
+            bootbox.prompt({
+                size: "small",
+                title: "Quantity",
+                callback: function (result) {
+                    let q = parseInt(result);
+                    let mq = parseInt($("#Quantity").val());
+                    if (q < mq) {
+                        $("#Quantity").val(q.toString())
+                        window.location.href = '/CartItem/AddItemToCart/' + @Model.ProductId + '?quantity=' + q;
+                    }
+                }
+            })
+        });
+    </script>
+}
