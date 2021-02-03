@@ -231,6 +231,22 @@
     <Compile Include="Migrations\202102030503323_buttons.designer.cs">
       <DependentUpon>202102030503323_buttons.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102031703203_migration.cs" />
+    <Compile Include="Migrations\202102031703203_migration.designer.cs">
+      <DependentUpon>202102031703203_migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102031823349_migration1.cs" />
+    <Compile Include="Migrations\202102031823349_migration1.designer.cs">
+      <DependentUpon>202102031823349_migration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102032026249_migr11.cs" />
+    <Compile Include="Migrations\202102032026249_migr11.designer.cs">
+      <DependentUpon>202102032026249_migr11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102032143067_migr22.cs" />
+    <Compile Include="Migrations\202102032143067_migr22.designer.cs">
+      <DependentUpon>202102032143067_migr22.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddToCategoryModel.cs" />
@@ -560,7 +576,6 @@
     <Content Include="Views\Stores\Details.cshtml" />
     <Content Include="Views\Stores\Edit.cshtml" />
     <Content Include="Views\Stores\Index.cshtml" />
-    <Content Include="Views\Stores\AddToStore.cshtml" />
     <Content Include="Views\Account\AddUserToRole.cshtml" />
     <Content Include="Views\Categories\AddToCategory.cshtml" />
     <Content Include="Views\SubmitedProducts\Create.cshtml" />
@@ -574,6 +589,11 @@
     <Content Include="Views\CartItems\Edit.cshtml" />
     <Content Include="Views\CartItems\Index.cshtml" />
     <Content Include="Views\Products\AddToProduct.cshtml" />
+    <Content Include="Views\CartItems\CartView.cshtml" />
+    <Content Include="Views\CartItems\AddToCart.cshtml" />
+    <Content Include="Views\Products\AddToCart.cshtml" />
+    <Content Include="Views\Products\CartView.cshtml" />
+    <Content Include="Views\Categories\Products.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -631,6 +651,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102030503323_buttons.resx">
       <DependentUpon>202102030503323_buttons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102031703203_migration.resx">
+      <DependentUpon>202102031703203_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102031823349_migration1.resx">
+      <DependentUpon>202102031823349_migration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102032026249_migr11.resx">
+      <DependentUpon>202102032026249_migr11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102032143067_migr22.resx">
+      <DependentUpon>202102032143067_migr22.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

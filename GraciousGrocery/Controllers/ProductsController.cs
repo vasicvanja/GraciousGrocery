@@ -19,7 +19,27 @@ namespace GraciousGrocery.Controllers
         {
             return View(db.Products.ToList());
         }
+        public ActionResult CartView()
+        {
+            return View();
+        }
+        public ActionResult AddToCart(int id)
+        {
+            CartItem model = new CartItem();
+            //model.Quantity = Convert.ToInt32(model.Quantity) - 1;
+            model.ProductId = id;
+            model.Products = db.Products.ToList();
+            return View(model);
+        }
 
+        [HttpPost]
+        public ActionResult AddToCart(CartItem model)
+        {
+            var product = db.Products.Find(model.ProductId);
+            model.Products.Add(product);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
@@ -146,7 +166,7 @@ namespace GraciousGrocery.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)

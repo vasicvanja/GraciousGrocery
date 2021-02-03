@@ -138,9 +138,9 @@ namespace GraciousGrocery.Controllers
             db.Stores.Remove(store);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-        */
-
+        }*/
+        
+        
         public ActionResult Delete(int id)
         {
             Store store = db.Stores.Find(id);
@@ -148,7 +148,7 @@ namespace GraciousGrocery.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -1,0 +1,23 @@
+﻿@model GraciousGrocery.Models.CartItem
+@{
+    ViewBag.Title = "CartView";
+}
+<body style="background-color: lightgoldenrodyellow!important">
+    <h2 style="margin-top:100px!important">Your Cart</h2>
+    @using (Html.BeginForm("CartView", "Products"))
+    {
+        
+
+        <ul style="list-style-type:none;">
+            @foreach (var item in Model.Products)
+            {
+                <li>
+
+                    <a href="/Products/Details/@item.ProductId"><img src="@item.ProductUrl" style="max-height:150px;max-width:220px" /></a>
+
+                </li>
+            }
+        </ul>
+
+    }
+</body>

@@ -24,7 +24,11 @@ namespace GraciousGrocery.Models
         [Required]
         [Display(Name = "Image")]
         public string ProductUrl { get; set; }
-        [Display(Name = "Category")]
-        public virtual Category category { get; set; }
+
+        public virtual List<Category> categories { get; set; }
+        public Product()
+        {
+            categories = new List<Category>();
+        }
     }
 }

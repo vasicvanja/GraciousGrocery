@@ -16,7 +16,7 @@ namespace GraciousGrocery.Models
         public string CategoryName { get; set; }
         [Display(Name = "Image")]
         public string CategoryUrl { get; set; }
-        public List<Product> products { get; set; }
+        public virtual List<Product> products { get; set; }
         public Category()
         {
             products = new List<Product>();

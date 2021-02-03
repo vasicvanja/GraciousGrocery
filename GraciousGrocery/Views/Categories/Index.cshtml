@@ -4,8 +4,7 @@
     ViewBag.Title = "Index";
 }
 <body style="background-color: lightgoldenrodyellow!important">
-    <h2 style="        margin-top: 120px !important;
-        color: #c72c48 !important">List of categories</h2>
+    <h2 style="margin-top: 120px !important;color: #c72c48 !important">List of categories</h2>
 
     <p>
         @Html.ActionLink("Create New", "Create", new { @style = "margin-top:120px!important" })
@@ -39,15 +38,19 @@
                             @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId })
                         }
                         @Html.ActionLink("Details", "Details", new { id = item.CategoryId })
+                        
                         @if (User.IsInRole("Administrator"))
                         {
-                            <!--@Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })-->
+                            @*<!--@Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })-->*@
                             <button data-id="@item.CategoryId" class="btn-link js-delete">Delete</button>
                         }
                         @if (User.IsInRole("Administrator"))
                         {
                             @Html.ActionLink("Add product to category", "AddToCategory", new { id = item.CategoryId })
                         }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Products", "Products", new { id = item.CategoryId })
                     </td>
                 </tr>
             }

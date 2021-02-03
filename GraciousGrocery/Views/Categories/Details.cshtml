@@ -5,7 +5,9 @@
 }
 <body style="background-color: lightgoldenrodyellow!important">
     <h2 style="        margin-top: 120px !important;
-        color: #c72c48 !important">Details</h2>
+        color: #c72c48 !important">
+        Details
+    </h2>
 
     <div>
         <h4>Category</h4>
@@ -20,17 +22,20 @@
             </dd>
 
             <dt>
-                <img src="@Model.CategoryUrl" style="max-height:200px; max-height:200px" />
+                @Html.DisplayNameFor(model => model.CategoryUrl)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.CategoryUrl)
+                <img src="@Model.CategoryUrl" style="max-height:200px; max-height:200px" />
             </dd>
 
         </dl>
     </div>
+    
+    
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
-    </body>
+
+</body>

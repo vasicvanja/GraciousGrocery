@@ -1,0 +1,12 @@
+﻿@model GraciousGrocery.Models.CartItem
+@{
+    ViewBag.Title = "AddToCart";
+}
+
+<h2>AddToCart</h2>
+@using (Html.BeginForm("AddToCart", "CartItems"))
+{
+    @Html.HiddenFor(m=>m.ProductId)
+    
+    
+}

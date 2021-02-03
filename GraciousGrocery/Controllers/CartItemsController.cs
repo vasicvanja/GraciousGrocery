@@ -39,9 +39,10 @@ namespace GraciousGrocery.Controllers
             }
             return View(shoppingItem);
         }
+        
 
         // GET: ShoppingCart/Create
-        public ActionResult AddItemToCart(int id, int quantity = 1)
+        /*public ActionResult AddItemToCart(int id, int quantity = 1)
         {
             string Userid = User.Identity.GetUserId();
             CartItem shoppingCartItems = db.CartItems.Find(Userid);//.Where(i => i.UserID.Equals(Userid)).First();
@@ -54,7 +55,7 @@ namespace GraciousGrocery.Controllers
                 db.SaveChanges();
             }
             return Redirect(Request.UrlReferrer.ToString());
-        }
+        }*/
 
 
         // GET: CartItems/Edit/5

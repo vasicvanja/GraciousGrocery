@@ -1,0 +1,22 @@
+﻿@model GraciousGrocery.Models.Category
+@{
+    ViewBag.Title = "Products";
+}
+<body style="background-color: lightgoldenrodyellow!important">
+    <h2 style="        margin-top: 120px !important;
+        color: #c72c48 !important">Products
+    </h2>
+
+    
+
+    <ul style="list-style-type:none;">
+        @foreach (var item in Model.products)
+        {
+            <li><img src="@item.ProductUrl" style="max-width:320px;max-height:150px"/></li><br />
+        }
+    </ul>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+</body>

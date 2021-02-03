@@ -21,11 +21,15 @@
     }
 
     .navbar-header {
-        padding-left: 87px;
+        padding-left: 40px!important;
         background: #836953;
         padding-top: 37px;
     }
-
+    .navbar-right {
+        float: right !important;
+        margin-right: -80px!important;
+        
+    }
     .navbar-brand {
         font-size: 26px;
         padding-right: 46px;
@@ -38,7 +42,7 @@
 
     .nav > li > a {
         font-weight: bold;
-        font-size: 17px !important;
+        font-size: 15px !important;
         padding-left: 25px !important;
         color: #c72c48 !important;
         margin-top: -1px !important;
@@ -70,7 +74,7 @@
                     <li style="margin-left:10px!important">@Html.ActionLink("Products", "Index", "Products")</li>
                     <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
                     <li>@Html.ActionLink("Stores", "Index", "Stores")</li>
-                    <li><a href="@Url.Action("Details","CartItems")"><img src="~/Content/Images/finalcart.png" class="img"/></a></li>
+                    <li><a href="@Url.Action("Details","Products")"><img src="~/Content/Images/finalcart.png" class="img"/></a></li>
                     
                     @if (User.IsInRole("Administrator"))
                     {

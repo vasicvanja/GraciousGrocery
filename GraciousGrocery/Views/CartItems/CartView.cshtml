@@ -1,0 +1,15 @@
+﻿@model GraciousGrocery.Models.CartItem
+@{
+    ViewBag.Title = "CartView";
+}
+
+<h2 style="margin-top:200px!important">CartView</h2>
+<ul>
+    @foreach (var item in Model.Products)
+    {
+    <li>
+        
+        <a href="/Products/Details/@item.ProductId">@item.ProductName</a>
+    </li>
+    }
+</ul>

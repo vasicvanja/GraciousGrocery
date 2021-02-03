@@ -34,6 +34,13 @@ namespace GraciousGrocery.Controllers
             }
             return View(category);
         }
+        public ActionResult Products(int? id)
+        {
+            
+            Category category = db.Categories.Find(id);
+            
+            return View(category);
+        }
 
         public ActionResult AddToCategory(int id)
         {
