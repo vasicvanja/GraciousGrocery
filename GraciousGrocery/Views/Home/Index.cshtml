@@ -5,59 +5,63 @@
     <link href="~/Content/CSS/Carousel.css" rel="stylesheet" />
 </head>
 
-    <body>
+<body>
 
-        <div class="action">
-            <div class="sale">
-                
-                <img src="~/Content/Images/akcija.jpg" style="max-width:480px;max-height:150px" />
-            </div>
+    <div class="action" style="margin-top: 130px">
+        
 
+            <img src="~/Content/Images/akcija11.jpg" style="width:500px;height:212px" />
+        
+
+    </div>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <a href="@Url.Action("Index", "Products")">
+                <img src="~/Content/Images/Banana-Free-PNG-Image.png" style="max-width:480px;max-height:300px" />
+            </a>
         </div>
-        <div class="deliver">
-            <div class="deliver1">Достава до вашиот дом: <br /> <i>Направете ја својата нарачка!</i></div>
+
+
+        <div class="mySlides fade">
+            <a href="@Url.Action("Index", "Products")">
+                <img src="~/Content/Images/nut.png" style="max-width: 500px; max-height: 300px">
+            </a>
+        </div>
+
+        <div class="mySlides fade">
+            <a href="@Url.Action("Index", "Products")">
+                <img src="~/Content/Images/tomato.png" style="max-width: 500px; max-height: 300px">
+            </a>
+        </div>
+        <div class="mySlides fade">
+            <a href="@Url.Action("Index", "Products")">
+                <img src="~/Content/Images/milkaa.png" style="max-width: 500px; max-height: 300px">
+            </a>
+        </div>
+        <div class="mySlides fade">
+            <a href="@Url.Action("Index", "Products")">
+                <img src="~/Content/Images/pringles.png" style="max-width: 500px; max-height: 300px">
+            </a>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <div class="deliver">
+        <div class="deliver1"><b>Достава до вашиот дом:</b> <br /> <b>Направете ја својата нарачка!</b></div>
+        <div class="slika">
             <a href="@Url.Action("Index","Products")">
                 <img src="~/Content/Images/deliver.jfif" style="width:500px" />
             </a>
-            
-            
         </div>
-        <div class="slideshow-container">
-
-            <div class="mySlides fade">
-                <a href="@Url.Action("Index", "Products")">
-                    <img src="~/Content/Images/Banana-Free-PNG-Image.png" style="max-width:480px;max-height:300px" />
-                </a>
-            </div>
 
 
-            <div class="mySlides fade">
-                <a href="@Url.Action("Index", "Products")">
-                    <img src="~/Content/Images/nut.png" style="max-width: 500px; max-height: 300px">
-                </a>
-            </div>
 
-            <div class="mySlides fade">
-                <a href="@Url.Action("Index", "Products")">
-                    <img src="~/Content/Images/tomato.png" style="max-width: 500px; max-height: 300px">
-                </a>
-            </div>
-            <div class="mySlides fade">
-                <a href="@Url.Action("Index", "Products")">
-                    <img src="~/Content/Images/milkaa.png" style="max-width: 500px; max-height: 300px">
-                </a>
-            </div>
-            <div class="mySlides fade">
-                <a href="@Url.Action("Index", "Products")">
-                    <img src="~/Content/Images/pringles.png" style="max-width: 500px; max-height: 300px">
-                </a>
-            </div>
-            
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-       
-    </body>
+    </div>
+
+</body>
 
 @section scripts{
     

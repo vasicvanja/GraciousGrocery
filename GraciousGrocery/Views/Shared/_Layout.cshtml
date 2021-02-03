@@ -13,9 +13,7 @@
 <style>
     .navbar {
         height: 50px;
-        background-image: url("/Content/Images/back11.jpg");
-        background-repeat: repeat;
-        background-size: contain;
+        background-color: #f5deb3;
     }
 
     .container {
@@ -24,7 +22,7 @@
 
     .navbar-header {
         padding-left: 87px;
-        background: #ffcccc;
+        background: #836953;
         padding-top: 37px;
     }
 
@@ -37,13 +35,17 @@
         margin-top: 10px;
     }
 
+
     .nav > li > a {
         font-weight: bold;
         font-size: 17px !important;
         padding-left: 25px !important;
-        color: #ff80aa !important;
+        color: #c72c48 !important;
         margin-top: -1px !important;
-        background: white !important;
+    }
+    .img {
+        width: 32px;
+        height: 25px;
     }
 
 </style>
@@ -68,7 +70,8 @@
                     <li style="margin-left:10px!important">@Html.ActionLink("Products", "Index", "Products")</li>
                     <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
                     <li>@Html.ActionLink("Stores", "Index", "Stores")</li>
-                    <li>@Html.ActionLink("Cart", "Details", "CartItems")</li>
+                    <li><a href="@Url.Action("Details","CartItems")"><img src="~/Content/Images/finalcart.png" class="img"/></a></li>
+                    
                     @if (User.IsInRole("Administrator"))
                     {
                         <li>@Html.ActionLink("Asign Role", "AddUserToRole", "Account")</li>

@@ -8,35 +8,30 @@ body {
     margin: 0;
 }
 .deliver {
-    margin-left: 600px;
-    margin-top: -175px;
+    
+}
+.slika {
+    margin-left: 520px;
+    margin-top: -110px;
 }
 
 .deliver1 {
-    
-    color: #206040 !important;
-    font-size: 19px;
-    text-align: center;
+    color: #c72c48 !important;
+    font-size: 26px;
+    margin-right: 666px;
+    margin-top: 225px;
+    text-align: end;
 }
-.action {
-    
-    margin-top: 10px;
-    
-}
+
 /* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
     position: relative;
     margin: auto;
-    margin-left: -25px;
-    margin-top: -90px;
+    margin-left: 640px;
+    margin-top: -243px;
 }
-.sale {
-    margin-left: -90px;
-    
-    margin-top: 100px;
-    
-}
+
 /* Hide the images by default */
 .mySlides {
     display: none;
@@ -63,7 +58,7 @@ body {
 }
 /* Position the "next button" to the right */
 .next {
-    right: 580px;
+    right: 100px;
     border-radius: 3px 0 0 3px;
 }
 
