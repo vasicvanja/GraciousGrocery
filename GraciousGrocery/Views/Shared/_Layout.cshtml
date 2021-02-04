@@ -74,8 +74,7 @@
                     <li style="margin-left:10px!important">@Html.ActionLink("Products", "Index", "Products")</li>
                     <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
                     <li>@Html.ActionLink("Stores", "Index", "Stores")</li>
-                    <li><a href="@Url.Action("Details","Products")"><img src="~/Content/Images/finalcart.png" class="img"/></a></li>
-                    
+                    <li><a href="@Url.Action("Cart", "Details", "CartItems")"><img src="~/Content/Images/finalcart.png" class="img" /></a></li>
                     @if (User.IsInRole("Administrator"))
                     {
                         <li>@Html.ActionLink("Asign Role", "AddUserToRole", "Account")</li>

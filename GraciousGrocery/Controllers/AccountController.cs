@@ -55,7 +55,7 @@ namespace GraciousGrocery.Controllers
         public ActionResult AddUserToRole()
         {
             var model = new AddToRoleModel();
-            model.roles.Add("Admin");
+            model.roles.Add("Administrator");
             model.roles.Add("Seller");
             model.roles.Add("User");
             return View(model);

@@ -19,6 +19,7 @@
                     @Html.DisplayNameFor(model => model.CategoryUrl)
                 </th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -66,8 +67,8 @@
                 function (result) {
                     if (result) {
                         $.ajax({
-                            url: "/Categories/Delete/" + button.attr("data-id"),
-                            method: "GET",
+                            method: "DELETE",
+                            url: "/api/Categories1/" + button.attr("data-id"),
                             success: function () {
                                 table.row(button.parents("tr")).remove().draw();
                             }
